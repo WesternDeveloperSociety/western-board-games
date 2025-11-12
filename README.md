@@ -1,6 +1,4 @@
-# PROJECT NAME
-
-below are common sections that you may like to populate or leave empty to populate later. refer to the template repo `WesternDeveloperSociety/project-spec-template` for the default.
+# Western Board Games Rental
 
 ## Purpose
 
