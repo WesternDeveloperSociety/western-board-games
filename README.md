@@ -7,9 +7,10 @@ A Django REST API backend with React frontend for managing board game rentals.
 
 1. Create a branch off of `dev` branch named in the format `<name>/type-title-of-this-branch` 
 
-1st step: git branch <<your-name>/type-title-of-this-branch>.  
-2nd step: git <<your-name>/type-title-of-this-branch>.
-
+```bash
+    git branch <your-name>/type-title-of-this-branch.  
+    git <your-name>/type-title-of-this-branch.
+```
 notes:
 - remove all "<>" from the commands
 - valid types include:
@@ -51,8 +52,14 @@ cd western-board-games
 #### 2. Backend Setup (Django)
 
 ##### Create and activate virtual environment:
+For Linux and MacOS:
 ```bash
 python -m venv wbg-env
+wbg-env\Scripts\activate
+```
+For Windows:
+```bash
+py -m venv wbg-env
 wbg-env\Scripts\activate
 ```
 
