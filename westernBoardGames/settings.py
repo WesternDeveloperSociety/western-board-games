@@ -89,11 +89,11 @@ WSGI_APPLICATION = 'westernBoardGames.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('LOCAL_DATABASE_NAME'),
-        'USER': os.environ.get('LOCAL_DATABASE_USER'),
-        'PASSWORD': os.environ.get('LOCAL_DATABASE_PASSWORD'),
-        'HOST': os.environ.get('LOCAL_DATABASE_HOST'),
-        'PORT': os.environ.get('LOCAL_DATABASE_PORT'),
+        'NAME': os.environ.get('LOCAL_DB_NAME'),
+        'USER': os.environ.get('LOCAL_DB_USER'),
+        'PASSWORD': os.environ.get('LOCAL_DB_PASSWORD'),
+        'HOST': os.environ.get('LOCAL_DB_HOST'),
+        'PORT': os.environ.get('LOCAL_DB_PORT'),
     }
 }
 

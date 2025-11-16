@@ -1,77 +1,113 @@
 # Western Board Games Rental
 
-## Purpose
+A Django REST API backend with React frontend for managing board game rentals.
 
-*what and who is this project for?*
+## Prerequisites
 
-## Contribution
+- Python 3.10 or higher
+- Node.js 16 or higher
+- PostgreSQL
 
-*add instructions on how to contribute to this repository, below is an example*
+## Setup Instructions
 
-1. Create a branch off of `dev` branch named in the format `<name>/type-title-of-this-branch`.
-    - valid types include:
-        - feat: feature
-        - fix: bug fix
-        - refact: refactor
-        - docs: documentation
-        - chore: a chore
-
-2. Once development is concluded, open a pull request from your branch back to the `dev` branch.
-
-## Branches
-
-- `dev`: where contributions are made
-- `qa`: contains a functional version of code to be tested
-- `prod`: production ready code to be released
-
-## Development
-
-*add instructions on how to start the dev environment, below is an example*
-
-1. Install dependencies
+### 1. Clone the Repository
 
 ```bash
-npm i
+git clone https://github.com/WesternDeveloperSociety/western-board-games.git
+cd western-board-games
 ```
 
-2. Start development server
+### 2. Backend Setup (Django)
 
+#### Create and activate virtual environment:
+```bash
+python -m venv wbg-env
+wbg-env\Scripts\activate
+```
+
+#### Install Python dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+#### Create environment file:
+Create a `.env` file in the project root with your database credentials:
+```env
+DEBUG=True
+SECRET_KEY=your-secret-key-here
+DB_NAME=your_database_name
+DB_USER=your_database_user
+DB_PASSWORD=your_database_password
+DB_HOST=localhost
+DB_PORT=5432
+```
+
+#### Run database migrations:
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
+
+#### Create superuser (optional):
+```bash
+python manage.py createsuperuser
+```
+
+#### Start Django development server:
+```bash
+python manage.py runserver
+```
+
+### 3. Frontend Setup (React)
+
+#### Navigate to the React frontend directory:
+```bash
+cd westernBoardGames\wbg_react_frontend
+```
+
+#### Install Node.js dependencies:
+```bash
+npm install
+```
+
+#### Start React development server:
 ```bash
 npm run dev
 ```
 
-## Deployment
+### 4. Development Workflow
 
-*add instructions on how to deploy this project (in applicable), below is an example*
+1. **Backend**: Django server runs on `http://localhost:8000/`
+2. **Frontend**: React app runs on `http://localhost:5173/`
+3. **Admin Panel**: Access Django admin at `http://localhost:8000/admin/`
 
-1. Ensure `NODE_ENV=production`
+## Project Structure
+
+- `westernBoardGames/` - Django project root
+  - `bg_admin/` - Board game administration app
+  - `games/` - Games management app
+  - `rentals/` - Rental management app
+  - `user/` - User management app
+  - `frontend/` - Frontend integration app
+  - `wbg_react_frontend/` - React frontend application
+
+## Quick Start Commands
 
 ```bash
-echo "NODE_ENV=production" > .env
+# Activate virtual environment
+wbg-env\Scripts\activate
+
+# Start backend
+python manage.py runserver
+
+# In new terminal - start frontend
+cd westernBoardGames\wbg_react_frontend
+npm run dev
 ```
 
-2. Install production dependencies
+## Deactivating Environment
 
 ```bash
-npm i
+deactivate
 ```
-
-3. Start production server
-
-```bash
-npm run start
-```
-
-## Contributors
-
-*give yourself some credit*
-
-Team Leads:
-- Bob
-- His friends
-
-Developers:
-- Robert
-- John
-- A few more friends
 
