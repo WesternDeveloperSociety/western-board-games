@@ -62,6 +62,7 @@ pip install -r requirements.txt
 ```
 
 ##### Create environment file:
+**IMPORTANT**: ALL API KEYS SHOULD PUT IN THIS FILE AND **NOT** IN THE CODEBASE ITSELF.
 Create a `.env` file in the project root with your local database credentials:
 ```env
 LOCAL_DB_NAME=your_local_database_name
