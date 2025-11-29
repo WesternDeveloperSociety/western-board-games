@@ -37,7 +37,7 @@ notes:
 ### Prerequisites
 
 - Python 3.10 or higher
-- Node.js 16 or higher
+- Node.js 20.19 or higher
 - PostgreSQL
 
 ### Setup Instructions
