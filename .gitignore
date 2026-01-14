@@ -1,1 +1,10 @@
 .env
+#pythonlibraries (The 3000 python files)
+wbg-env/
+venv/
+__pycache__/
+*.pyc
+
+#nodemodules (The 5000 React files)
+node_modules/
+dist/
