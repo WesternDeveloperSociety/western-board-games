@@ -1,10 +1,11 @@
-import TeamMembers from './TeamMembers.jsx'
+import './App.css'
+import Team from './pages/Team.jsx'
 
 function App() {
 
   return (
     <>
-      <TeamMembers/>
+      <Team/>
     </>
     
   );
