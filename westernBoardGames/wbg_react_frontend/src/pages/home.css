@@ -7,20 +7,15 @@
 /* ================= HEADER ================= */
 
 .header {
-  /* Force full screen width */
   width: 100vw;
   min-height: 70vh;
-
-  /* Break out of centered container */
   position: relative;
   left: 50%;
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-
   background-size: cover;
   background-position: center;
-
   display: flex;
   justify-content: center;
   align-items: center;

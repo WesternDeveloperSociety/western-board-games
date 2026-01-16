@@ -26,6 +26,26 @@ export default function Home() {
                     </p>
                 </div>
             </div>
+
+            {/* MAIN CONTENT SECTION */}
+            <div className="main">
+                <div className='textBubble'>
+                    <p>Meetings every Saturday 2–6pm at the UCC</p>
+                </div>
+                <div className='textBubble'>
+                    <p>Explore our library <span className="link" style={{cursor: 'pointer', textDecoration: 'underline'}}>HERE</span> and rent board games to enjoy at home!</p>
+                </div>
+                <div className='textBubble'>
+                    <p> Keep up to date with our latest announcements, upcoming events, and club activities by:
+                        <br/>
+                        Joining our <a href="https://discord.gg/QfgnB6SjKh" target="_blank" rel="noopener noreferrer" className="link"> Discord</a> server!
+                        <br/>
+                        Following us on Instagram <a href="https://www.instagram.com/westernboardgamesclub/" target="_blank" rel="noopener noreferrer" className="link"> @westernboardgamesclub</a>!
+                        <br/>
+                        Find all our links <a href="https://linktr.ee/westernboardgamesclub?utm_source=linktree_profile_share&ltsid=f541931f-2ce9-4cd1-8513-adbae08f24a5" target="_blank" rel="noopener noreferrer" className="link"> here</a>!
+                    </p>
+                </div>
+            </div>
         </div>
     );
 }
