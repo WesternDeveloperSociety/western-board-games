@@ -1,59 +1,46 @@
 import React from 'react';
+import './Checkout.css'; 
 
-const Checkout = () => {
+const Checkout = () => { 
+
+  //dummy variables here
+  //
+  let numGames = 3;
+
+   /*method that creates a list of games from the number of games
+  there's another way to write this right
+  */
+  function loadGames() {
+    const arr = [];
+    for(let i = 0; i < numGames; i++){
+      arr.push(
+        <div key={i} className="checkoutCard">
+          <h3>Game #{i + 1}</h3>
+          <p className="textBody">Details TBD</p>
+        </div>
+      );
+    }
+    return arr;
+  }
+
+  //viewing screen
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-      <h1 style={{ fontSize: '100px', margin: 0 }}>CHECKOUT</h1>
+    <div className="checkoutMain"> 
+      <h1 className="textTitle">
+        Confirm Your Rentals |{numGames}/2|
+      </h1>
+
+      <h2 className="textSubtitle">
+        Games: {numGames}
+      </h2>
+           
+      <div className="gameList">
+        {loadGames()}
+      </div>
+
     </div>
   );
 };
 
-
-//CSS Styles
-const styles = {
-  container: {
-    maxWidth: '600px',
-    margin: '50px auto',
-    fontFamily: 'Arial, sans-serif',
-    padding: '20px',
-  },
-  header: {
-    textAlign: 'center',
-    color: '#333',
-  },
-  cartBox: {
-    border: '1px solid #ddd',
-    borderRadius: '8px',
-    padding: '20px',
-    backgroundColor: '#f9f9f9',
-    boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
-  },
-  list: {
-    listStyle: 'none',
-    padding: 0,
-  },
-  listItem: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    padding: '10px 0',
-    borderBottom: '1px solid #eee',
-  },
-  totalRow: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    marginTop: '20px',
-  },
-  button: {
-    width: '100%',
-    padding: '15px',
-    backgroundColor: '#4F46E5', //indigo
-    color: 'white',
-    border: 'none',
-    borderRadius: '5px',
-    fontSize: '16px',
-    cursor: 'pointer',
-    marginTop: '20px',
-  },
-};
-
 export default Checkout;
+//cd westernBoardGames/wbg_react_frontend
