@@ -74,13 +74,14 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 22px;
+  
 }
 
 /* Text Bubbles */
 .textBubble {
-  width: min(780px, 95%);
+  width: 90%;
   background: #ECF4D3;
-  padding: 16px 20px;
+  padding: 22px 32px;
   text-align: center;
   color: black;
   font-weight: 700;
@@ -92,7 +93,7 @@ body {
 /* Remove default paragraph */
 .textBubble p {
   margin: 0;
-  font-size: 15px;
+  font-size: 22px;
   line-height: 1.6;
 }
 
@@ -132,6 +133,7 @@ body {
 .galleryTitle {
   margin: 0 0 20px;
   font-size: 26px;
+  font-weight: bold;
   letter-spacing: 6px;
   text-decoration: underline;
   text-underline-offset: 8px;
