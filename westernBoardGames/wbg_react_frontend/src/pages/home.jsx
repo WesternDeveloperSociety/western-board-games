@@ -46,6 +46,17 @@ export default function Home() {
                     </p>
                 </div>
             </div>
+
+            {/* PHOTO GALLERY SECTION */}
+            <div className="gallery">
+                <h2 className="galleryTitle">Photo Gallery</h2>
+                <div className="galleryItems">
+                    <img src={imagePlaceholder} alt="placeholder" className="galleryImg" />
+                    <img src={imagePlaceholder} alt="placeholder" className="galleryImg" />
+                    <img src={imagePlaceholder} alt="placeholder" className="galleryImg" />
+                    <img src={imagePlaceholder} alt="placeholder" className="galleryImg" />
+                </div>
+            </div>
         </div>
     );
 }

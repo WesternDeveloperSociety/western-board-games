@@ -53,7 +53,7 @@ body {
 
 /* About text */
 .about-text {
-  font-size: 14px;
+  font-size: 22px;
   line-height: 1.6;
   font-weight: 600;
 }
@@ -75,6 +75,7 @@ body {
   align-items: center;
   gap: 22px;
 }
+
 /* Text Bubbles */
 .textBubble {
   width: min(780px, 95%);
@@ -110,4 +111,49 @@ body {
   text-underline-offset: 3px;
   color: inherit;
   cursor: pointer;
+}
+
+/* ================= PHOTO GALLERY ================= */
+/* Gallery section */
+.gallery {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background: #ECF4D3;  
+  padding: 24px 16px 36px;
+  text-align: center;
+  border-top: 2px solid rgba(0, 0, 0, 0.08);
+  color: black;
+}
+
+/* Gallery title */
+.galleryTitle {
+  margin: 0 0 20px;
+  font-size: 26px;
+  letter-spacing: 6px;
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  font-weight: 800;
+}
+
+/* Gallery image grid */
+.galleryItems {
+  max-width: 95%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+/* Individual gallery image */
+.galleryImg {
+  width: 100%;
+  height: 155px;
+  object-fit: cover;
+  border-radius: 18px;
+  background: #A4AF7C;
+  border-radius: 18px;
+  padding: 12px;
 }
