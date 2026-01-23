@@ -1,18 +1,18 @@
 import React from 'react';
-import './Checkout.css'; 
+import '../styles/Checkout.css';
 
-const Checkout = () => { 
+const Checkout = () => {
 
   //dummy variables here
   //
   let numGames = 3;
 
-   /*method that creates a list of games from the number of games
-  there's another way to write this right
-  */
+  /*method that creates a list of games from the number of games
+ there's another way to write this right
+ */
   function loadGames() {
     const arr = [];
-    for(let i = 0; i < numGames; i++){
+    for (let i = 0; i < numGames; i++) {
       arr.push(
         <div key={i} className="checkoutCard">
           <h3>Game #{i + 1}</h3>
@@ -25,7 +25,7 @@ const Checkout = () => {
 
   //viewing screen
   return (
-    <div className="checkoutMain"> 
+    <div className="checkoutMain">
       <h1 className="textTitle">
         Confirm Your Rentals |{numGames}/2|
       </h1>
@@ -33,7 +33,7 @@ const Checkout = () => {
       <h2 className="textSubtitle">
         Games: {numGames}
       </h2>
-           
+
       <div className="gameList">
         {loadGames()}
       </div>
