@@ -1,15 +1,11 @@
 // Meet the Team Page
 import './Team.css';
 import TeamMemberCard from '../components/TeamMemberCard';
-import ClipPathDefs from '../components/ClipPathDefs';
 import { members } from '../data/members';
 
 const Team = () => {
   return (
     <div className="team-page">
-      {/* SVG clip-path definitions for card suits - must be in DOM */}
-      <ClipPathDefs />
-      
       <div className="team-header">
         <h1 className="team-title">Meet The Team</h1>
       </div>

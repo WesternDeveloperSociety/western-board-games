@@ -1,6 +1,7 @@
 .team-page {
   min-height: 100vh;
   padding: 2rem;
+  padding-top: 6rem;  /* Space for navbar */
   background-image: url("../assets/bg-team-members.png");
   background-size: cover;
   background-position: center;
@@ -16,8 +17,8 @@
 .team-title {
   text-align: center;
   font-size: 3rem;
-  margin-bottom: 1rem;
-  color: #f5f5dc;
+  margin-bottom: 0.9rem;
+  color: #fff;
   font-family: Georgia, serif;
 }
 
@@ -34,11 +35,29 @@
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .team-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Playing Card Styles */
@@ -50,7 +69,7 @@
   transition: transform 0.3s ease;
   position: relative;
   aspect-ratio: 2.5 / 3.5;
-  border: 8px solid #e8dcc0;
+  border: 6px solid #fff;
   display: flex;
   flex-direction: column;
 }
@@ -85,12 +104,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem 0.5rem;
+  padding: 1rem 0.5rem;  /* Reduced from 1.5rem to 1rem */
 }
 
 .team-card-name {
   font-size: 1.75rem;
   color: #f5f5dc;
+  margin-top: -0.5rem;  /* Pulls name up */
   margin-bottom: 0.5rem;
   text-align: center;
   line-height: 1.2;
@@ -102,13 +122,14 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 0.7rem;
+  padding: 0.5rem;  /* Reduced from 0.7rem */
+  margin-top: -0.5rem;  /* Pulls image closer to name */
 }
 
 .team-card-image {
   width: 100%;
-  max-width: 150px;
-  height: 150px;
+  max-width: 200px;
+  height: 200px;
   object-fit: cover;
   box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
@@ -121,16 +142,38 @@
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 }
 
+/* Mask approach using your SVG files */
 .team-card-image.heart {
-  clip-path: url(#heart-clip);
+  -webkit-mask-image: url("../assets/heart.svg");
+  mask-image: url("../assets/heart.svg");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
 }
 
 .team-card-image.spade {
-  clip-path: url(#spade-clip);
+  -webkit-mask-image: url("../assets/spade.svg");
+  mask-image: url("../assets/spade.svg");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
 }
 
 .team-card-image.club {
-  clip-path: url(#club-clip);
+  -webkit-mask-image: url("../assets/club.svg");
+  mask-image: url("../assets/club.svg");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
 }
 
 .team-card-position {
@@ -138,11 +181,4 @@
   font-size: 0.85rem;
   margin-top: 0.5rem;
   text-align: center;
-}
-
-.clip-paths {
-  position: absolute;
-  width: 0;
-  height: 0;
-  overflow: hidden;
 }
