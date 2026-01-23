@@ -9,7 +9,7 @@ A Django REST API backend with React frontend for managing board game rentals.
 
 ```bash
     git branch <your-name>/type-title-of-this-branch.  
-    git <your-name>/type-title-of-this-branch.
+    git checkout <your-name>/type-title-of-this-branch.
 ```
 notes:
 - remove all "<>" from the commands

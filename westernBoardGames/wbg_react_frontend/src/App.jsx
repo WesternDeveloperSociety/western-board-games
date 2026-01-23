@@ -1,7 +1,12 @@
-import Profile from './Profile.jsx';
+import React from 'react';
+import Checkout from './pages/Checkout';
+import Home from './pages/home';
+
 
 function App() {
-  return <><Profile /></>
+  return (
+    <Home />
+  );
 }
 
 export default App;
