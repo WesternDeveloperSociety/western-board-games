@@ -5,7 +5,7 @@ const Checkout = () => {
 
   //dummy variables here
   //
-  let numGames = 3;
+  let numGames = 15;
 
   /*method that creates a list of games from the number of games
  there's another way to write this right
@@ -30,6 +30,7 @@ const Checkout = () => {
         Confirm Your Rentals |{numGames}/2|
       </h1>
 
+
       <h2 className="textSubtitle">
         Games: {numGames}
       </h2>
@@ -37,6 +38,7 @@ const Checkout = () => {
       <div className="gameList">
         {loadGames()}
       </div>
+
 
     </div>
   );

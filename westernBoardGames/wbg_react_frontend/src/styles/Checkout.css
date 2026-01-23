@@ -1,15 +1,14 @@
 
 
-/*main part*/
+/*main container, change to not use px later*/
 .checkoutMain {
-  background-color: #FFFFFF;
-  min-height: 100vh;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  font-family: 'Inter', sans-serif;
+  background-color: #ECF4D3;
+  max-width: 800px; /*stops it from getting too wide*/
+  margin: 40px auto; /*horizontal centering*/
+  padding: 30px;
+  border-radius: 20px; 
+  font-family: sans-serif; /* change font later */
+  color: var(--text-dark);
 }
 
 /*Text Styling*/
@@ -32,13 +31,15 @@
 
 /*checkout card for the board games*/
 .checkoutCard {
+  background-color: #ffffff;
+  padding: 15px;
   border: 1px solid black;
-  padding: 10px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin: 10px;
   width: 800px;
-  color: black;
-  /*text centering*/
-  text-align: center; 
 }
 
 /*list of games*/
@@ -48,3 +49,4 @@
   align-items: center;
   margin-top: 20px;
 }
+
