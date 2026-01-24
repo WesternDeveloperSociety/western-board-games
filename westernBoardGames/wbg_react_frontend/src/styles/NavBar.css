@@ -1,0 +1,134 @@
+.navbar {
+  background-color: transparent;
+  padding: 0.5rem 0;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+/* Transparent navbar for pages with background images */
+.navbar-transparent {
+  background-color: transparent;
+  box-shadow: none;
+  position: absolute;
+  padding: 2%;
+  font-size: 1.2rem;
+}
+
+.navbar-transparent .navbar-container {
+  justify-content: flex-end;
+  padding-left: 20%;
+  max-width: 1280px !important;
+}
+
+.navbar-transparent .navbar-menu li a {
+  color: white;
+  font-weight: 600;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+
+}
+
+.navbar-transparent .navbar-menu {
+  gap: 4em;
+}
+
+.navbar-transparent .navbar-menu li a:hover {
+  color: #A4AE7C;
+  width: 30%;
+}
+
+/* Profile page navbar - green tint */
+.navbar-profile {
+  background-color: #A4AE7C;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-profile .navbar-menu li a {
+  color: white;
+  font-weight: 600;
+}
+
+.navbar-profile .navbar-menu li a:hover {
+  color: #ECF4D3;
+}
+
+/* Catalog page navbar - beige/cream */
+.navbar-catalog {
+  background-color: #A4AE7C;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-size: 1.2rem;
+}
+
+.navbar-catalog .navbar-menu {
+  gap: 4em;
+}
+
+.navbar-catalog .navbar-menu li a {
+  color: #2d2d2d;
+  font-weight: 600;
+}
+
+.navbar-catalog .navbar-menu li a:hover {
+  color: #6b6b5a;
+}
+
+/* Checkout page navbar - white */
+.navbar-checkout {
+  background-color: #A4AE7C;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-checkout .navbar-menu li a {
+  color: black;
+  font-weight: 600;
+}
+
+.navbar-checkout .navbar-menu li a:hover {
+  color: #666;
+}
+
+.navbar-container {
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo a {
+  color: transparent;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navbar-logo img {
+  padding: 0;
+  margin: 0;
+  width: 20%;
+}
+
+.navbar-logo a:hover {
+  color: #ffffff;
+}
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-menu li a {
+  color: black;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar-menu li a:hover {
+  color: #666;
+}
