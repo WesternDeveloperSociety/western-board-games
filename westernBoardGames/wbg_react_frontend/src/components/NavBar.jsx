@@ -1,14 +1,14 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import '../styles/NavBar.css';
 import logo from '../assets/logo.svg';
 
 const NavBar = () => {
     const location = useLocation();
-    
+
     // Determine navbar styling based on current page
     const getNavbarStyle = () => {
-        switch(location.pathname) {
+        switch (location.pathname) {
             case '/':
                 return 'navbar-transparent';
             case '/team':
@@ -23,10 +23,10 @@ const NavBar = () => {
                 return '';
         }
     };
-    
+
     // Hide logo on home page
     const showLogo = location.pathname !== '/';
-    
+
     return (
         <nav className={`navbar ${getNavbarStyle()}`}>
             <div className="navbar-container">
@@ -36,12 +36,12 @@ const NavBar = () => {
                     </div>
                 )}
                 <ul className="navbar-menu">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/catalog">Catalog</a></li>
-                    <li><a href="/profile">Profile</a></li>
-                    <li><a href="/team">Our Team</a></li>
-                    {/* <li><a href="/admin">Admin</a></li> */}
-                    <li><a href="/checkout"><i className="fa-solid fa-cart-shopping"></i></a></li>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/catalog">Catalog</Link></li>
+                    <li><Link to="/profile">Profile</Link></li>
+                    <li><Link to="/team">Our Team</Link></li>
+                    {/* <li><Link to="/admin">Admin</Link></li> */}
+                    <li><Link to="/checkout"><i className="fa-solid fa-cart-shopping"></i></Link></li>
                 </ul>
             </div>
         </nav>
