@@ -1,4 +1,6 @@
 import '../styles/Profile.css';
+import ProfileBoardGameCard from "../components/ProfileBoardGameCard.jsx";
+import boardGamesData from "../data/boardGamesData.js";
 
 function Profile() {
     return (
@@ -8,7 +10,7 @@ function Profile() {
             </div>
 
             <div className="container">
-                <div>
+                <div className="user_info">
                     <h2>Name: pull_from_backend</h2>
                     <h3>Email: pull_from_backend</h3>
                 </div>
@@ -25,7 +27,20 @@ function Profile() {
                         </thead>
                         <tbody>
                             <tr>
-                                <td>pull_from_backend</td>
+                                <td>
+                                    {boardGamesData.map((game) => (
+                                        <ProfileBoardGameCard
+                                            key={game.id}
+                                            image={game.image}
+                                            title={game.title}
+                                            genre={game.genre}
+                                            players={game.players}
+                                            playtime={game.playtime}
+                                            complexity={game.complexity}
+                                            rating={game.rating}
+                                        />
+                                    ))}
+                                    </td>
                                 <td>pull_from_backend</td>
                                 <td>pull_from_backend</td>
                             </tr>
@@ -45,7 +60,20 @@ function Profile() {
                         </thead>
                         <tbody>
                             <tr>
-                                <td>pull_from_backend</td>
+                                <td>
+                                    {boardGamesData.map((game) => (
+                                        <ProfileBoardGameCard
+                                            key={game.id}
+                                            image={game.image}
+                                            title={game.title}
+                                            genre={game.genre}
+                                            players={game.players}
+                                            playtime={game.playtime}
+                                            complexity={game.complexity}
+                                            rating={game.rating}
+                                        />
+                                    ))}
+                                </td>
                                 <td>pull_from_backend</td>
                                 <td>pull_from_backend</td>
                             </tr>
