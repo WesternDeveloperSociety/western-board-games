@@ -10,12 +10,11 @@ import boardGameData from "../data/boardGamesData";
 
 const Checkout = () => {
   //dummy variables here
-  //
 
   //rmb list of numbers, update screen whenever numbers change
   //setGames function
   //games is a constant
-  const [games, setGames] = useState([1,2,3,4,5,6,7,8,9,10]);
+  const [games, setGames] = useState([1,2,3]);
   const numGames = games.length;
 
   //method that deletes games (if this is inefficient figure out the js syntax later)
@@ -102,20 +101,49 @@ const Checkout = () => {
 
       {/*main container box that has title text, which holds space for the games*/}
       <div className="checkoutMain">
-        <h1 className="textTitle"> Confirm Your Rentals |{numGames}/2| </h1>
-          <h2 className="textSubtitle"> Games: {numGames} </h2>
+        <h1 className="textTitle"> Checkout </h1>
+    
+        {/*split container into two*/}
+        <div className="checkoutColumns">
 
-          {/*button*/}
-          <div className="buttonContainer">
-            <button className="addGameBtn" onClick={handleAdd}>
-                ADD GAME
-            </button>
+          <div className="leftColumn">
+
+            <h3 className="textHeader">Contact Information</h3>
+              <div className="infoBox">
+                <p>Name: John Doe</p>
+              </div>
+              <div className="infoBox">
+                <p>ID: 123123123123</p>
+              </div>
+
+            <h3 className="textHeader"> Return Information </h3>
+              <div className="returnBox">
+                <strong> PICKUP </strong> <br/> RM. 123 | 4:00PM                
+              </div>
+
+              <div className="returnBox">      
+                <strong>RETURN</strong><br/> RM. 123 | 4:00PM
+              </div>
+            
           </div>
-        <div className="gameList">
-          {loadGames()}
-        </div>
 
-        <h1 className="textTitle"> Return Information </h1>
+
+          <div className="rightColumn">
+              <h2 className="textHeader"> Your Games: {numGames} </h2>
+              <div className="gameList">
+                {loadGames()}
+              </div>
+
+              {/*add games button*/}
+              <div className="buttonContainer">
+                <button className="addGameBtn" onClick={handleAdd}> ADD GAME </button>
+              </div>
+
+              {/*confirm reservationbutton*/}
+              <button className="confirmButton"> Confirm Reservation </button>
+          </div>
+
+        </div>
 
       </div>
     </div> 

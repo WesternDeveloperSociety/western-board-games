@@ -1,42 +1,110 @@
 
 /*main container, change to not use px later*/
 .checkoutMain {
-  background-color: #ECF4D3;
-  max-width: 1000px; /*stops it from getting too wide*/
-  margin: 40px auto; /*horizontal centering*/
-  padding: 30px;
-  border-radius: 10px; 
+  margin: 0 auto; /*horizontal centering*/
+  max-width: 1200px;
+  padding: 20px;
   font-family: Inter; /*change font later*/
   /*color: blahblahblah ;*/
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .checkoutBackground{
   /*cover whole screen, change later its kinda ugly
-  MAKE CUSTOM WESTERN BOARD GAMES CARDS THAT GO AROUND*/
-  min-height: 100vh; 
-  width: 100%;
-  
-  opacity: 1 ;
-
-  /*image Goes Here (gradient makes the bg transparent)*/
-  background-image: 
-  linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.9)),
-  url('../assets/background-checkout.png'); 
-  background-size: cover;
-  background-position: top center;
-  background-repeat: no-repeat; 
-  
-  /*place the checkout at the beginning of the page*/
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-
-  padding-top: 80px;
-  padding-bottom: 300px;
-
-
+  idea MAKE CUSTOM WESTERN BOARD GAMES CARDS THAT GO AROUND*/
+  background-color: #fcfcfc; /* White/Grey background like image */
+  min-height: 100vh;
+  font-family: Inter;
 }
+
+/*two column design*/
+.checkoutColumns {
+  display: flex;
+  gap: 40px;
+}
+
+.leftColumn {
+  flex: 1; 
+}
+
+.rightColumn {
+  flex: 1; 
+}
+
+.infoBox{
+  background-color: #ECF4D3;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.25);
+}
+
+.returnBox {
+  background-color: #f9fdf5; /*again, change off pixels later*/
+  border: 1px solid #e0e0e0;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.25);
+}
+
+.buttonContainer {
+  text-align: center; 
+  margin-bottom: 20px;
+}
+
+.addGameBtn {
+  background-color: #A4AE7C; 
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s; /*hover effect*/
+}
+
+.confirmButton {
+  width: 100%;
+  height: 4rem;
+  background-color: #A4AE7C; 
+  color: white;
+  border: none;
+  padding: 15px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/*checkout card for the board games*/
+.checkoutCard {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  position: relative;
+
+  /*allows for formatting of images and stuff later*/
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/*list of games*/
+.gameList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
 
 /*Text Styling*/
 .textSubtitle {
@@ -50,34 +118,19 @@
   font-size: 16;
 }
 .textTitle {
+  margin-top: 3.5rem;
+  margin-bottom: 1.5rem;
   color: black;
-  font-size: 32px;
-  margin: 0;
-  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
-/*checkout card for the board games*/
-.checkoutCard {
-  background-color: #ffffff;
-  padding: 15px;
-  border: 1px solid black;
-  border-radius: 15px;
-  margin: 10px;
-  height: 150;
-  width: 900px;
-
-  /*allows for formatting of images and stuff later*/
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-}
-
-/*list of games*/
-.gameList {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
+.textHeader {
+    color: #888;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    font-weight: normal;
 }
 
