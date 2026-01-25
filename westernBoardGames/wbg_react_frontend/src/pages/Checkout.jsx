@@ -9,19 +9,24 @@ import boardGameData from "../data/boardGamesData";
 
 
 const Checkout = () => {
+  //confirm state for confirm button
+  const [isConfirmed, setIsConfirmed] = useState(false);
+  function handleConfirm() {
+  setIsConfirmed(true); 
+  }
+  
   //dummy variables here
 
   //rmb list of numbers, update screen whenever numbers change
   //setGames function
-  //games is a constant
-  const [games, setGames] = useState([1,2,3]);
+  //games is a constant (for testing, later save what games are in cart)
+  const [games, setGames] = useState([1,2]);
   const numGames = games.length;
 
-  //method that deletes games (if this is inefficient figure out the js syntax later)
+    //method that deletes games (if this is inefficient figure out the js syntax later)
   function handleDelete(idDelete){
     //create empty list
     let newGamesList = [];
-
     for (let i = 0; i < games.length; i++){
       let id = games[i];
       //iterate through, add games that aren't being deleted
@@ -40,7 +45,7 @@ const Checkout = () => {
     //take the current max id and just add one to it (change later)
     let nextId = 1;
     if (games.length > 0) {
-       nextId = Math.max(...games) + 1;
+        nextId = Math.max(...games) + 1;
     }
 
     //add new id, update screen
@@ -48,56 +53,11 @@ const Checkout = () => {
     setGames(newGamesList);
   }
 
-
-  /*method that creates a list of games from the number of games
- there's another way to write this right
- WOULD BE REALLY COOL TO ADD A PARALAX BACKGROUND
- */
-  function loadGames() {
-    //empty array
-    const arr = [];
-
-    for (let i = 0; i < games.length; i++) {
-
-      //get id at index
-      let id = games[i];
-
-      //add card to list
-      arr.push(
-        <div key={id} className="checkoutCard">
-          
-          <div style={{flexGrow: 1}}>
-             <h3>Game #{id}</h3>
-             <p className="textBody"> Details TBD</p>
-          </div>
-
-          <div 
-            //super cool delete button
-             onClick={() => handleDelete(id)} 
-             style={{ 
-               cursor: 'pointer', 
-               fontWeight: 'bold', 
-               padding: '10px',
-               color: '#666' 
-             }}
-          >
-             X
-          </div>
-        </div>
-      );
-    }
-    return arr;
-  }
-
-
   //viewing screen
   return (
     //background that's just the png
 
     <div className = "checkoutBackground">
-      <div ClassName = "navBar">
-
-      </div>
 
       {/*main container box that has title text, which holds space for the games*/}
       <div className="checkoutMain">
@@ -117,34 +77,85 @@ const Checkout = () => {
               </div>
 
             <h3 className="textHeader"> Return Information </h3>
+            
+            <div className='returnWrapper'>
               <div className="returnBox">
                 <strong> PICKUP </strong> <br/> RM. 123 | 4:00PM                
               </div>
 
               <div className="returnBox">      
-                <strong>RETURN</strong><br/> RM. 123 | 4:00PM
+                <strong>RETURN</strong><br/> RM. 123 | 4:00PM | JAN 23
               </div>
+            </div>
             
           </div>
 
 
           <div className="rightColumn">
-              <h2 className="textHeader"> Your Games: {numGames} </h2>
+              <h2 className="textHeader"> Your Games: {numGames}  </h2>
               <div className="gameList">
-                {loadGames()}
+
+                {numGames === 0 && (
+                  //i dont understand the syntax but whatever!
+                  //displays if cart is empty
+                    <h2 className='textSubtite'> Your cart is empty (lol)</h2>
+                )}
+                
+                {games.map((id) => {
+                  //take in data
+                  let gameData = boardGameData.find(g => g.id === id);
+            
+                  //placeholder if data is not found
+                  if (!gameData) {
+                      gameData = { title: `Game #${id}`, genre: "TBD", image: "..." };
+                  }
+
+                  //return data for a card
+                  return (
+                      <div key={id} className="checkoutCard">
+                          
+                          <div style={{marginRight: '15px'}}> 
+                              <img 
+                              src={gameData.image} 
+                              alt={gameData.title} 
+                              className = "gameImage"
+                              />
+                          </div>
+
+                          <div style={{flexGrow: 1}}>
+                              <h3>{gameData.title}</h3>
+                              <p className="textBody"> {gameData.genre}</p>
+                          </div>
+
+                          <div onClick={() => handleDelete(id)} 
+                          //radius of the X to click on:
+                          style={{cursor: 'pointer', padding: '1rem'}}
+                          className="deleteBtn">
+                              X
+                          </div>
+
+                      </div>
+                  );
+              })}
               </div>
 
+              
               {/*add games button*/}
               <div className="buttonContainer">
-                <button className="addGameBtn" onClick={handleAdd}> ADD GAME </button>
+                <button className="addGameBtn" onClick={handleAdd}> ADD GAME **FOR TESTING** </button>
               </div>
 
               {/*confirm reservationbutton*/}
-              <button className="confirmButton"> Confirm Reservation </button>
+              <button 
+                className={isConfirmed ? "confirmButton success" : "confirmButton"} 
+                onClick={handleConfirm}
+              > 
+                {/*Change text */}
+                {isConfirmed ? "Confirmed! " : "Confirm Reservation"} 
+                
+            </button>
           </div>
-
         </div>
-
       </div>
     </div> 
 
