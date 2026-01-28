@@ -19,6 +19,8 @@ const NavBar = () => {
                 return 'navbar-catalog';
             case '/checkout':
                 return 'navbar-catalog';
+            case '/admin':
+            return 'navbar-catalog';
             default:
                 return '';
         }

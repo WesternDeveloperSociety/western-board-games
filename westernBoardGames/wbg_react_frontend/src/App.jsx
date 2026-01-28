@@ -9,6 +9,7 @@ import CatalogPage from './pages/CatalogPage';
 import Home from './pages/home';
 import Checkout from './pages/Checkout';
 import Footer from './components/Footer';
+import AdminDashboard from './pages/Admin';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/team" element={<Team />} />
           <Route path="/catalog" element={<CatalogPage />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/admin" element={<AdminDashboard />} />
           {/* <Route path="/signout" element={<SignOut />} /> */}
         </Routes>
         <Footer></Footer>
