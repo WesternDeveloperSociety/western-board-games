@@ -1,46 +1,128 @@
-import React from 'react';
+import React, {useState} from 'react';
 import '../styles/Checkout.css';
 
-const Checkout = () => {
+//backgroud import
+import backgroundCheckout from "../assets/background-checkout.png";
 
+//boardGameData import
+import boardGameData from "../data/boardGamesData";
+
+
+const Checkout = () => {
   //dummy variables here
   //
-  let numGames = 3;
+
+  //rmb list of numbers, update screen whenever numbers change
+  //setGames function
+  //games is a constant
+  const [games, setGames] = useState([1,2,3,4,5,6,7,8,9,10]);
+  const numGames = games.length;
+
+  //method that deletes games (if this is inefficient figure out the js syntax later)
+  function handleDelete(idDelete){
+    //create empty list
+    let newGamesList = [];
+
+    for (let i = 0; i < games.length; i++){
+      let id = games[i];
+      //iterate through, add games that aren't being deleted
+      if(id != idDelete){
+        newGamesList.push(id);
+      }
+    }
+    //update
+    setGames(newGamesList)
+  }
+
+  function handleAdd(){
+    //copy list
+    let newGamesList = [...games]; 
+
+    //take the current max id and just add one to it (change later)
+    let nextId = 1;
+    if (games.length > 0) {
+       nextId = Math.max(...games) + 1;
+    }
+
+    //add new id, update screen
+    newGamesList.push(nextId);
+    setGames(newGamesList);
+  }
+
 
   /*method that creates a list of games from the number of games
  there's another way to write this right
+ WOULD BE REALLY COOL TO ADD A PARALAX BACKGROUND
  */
   function loadGames() {
+    //empty array
     const arr = [];
-    for (let i = 0; i < numGames; i++) {
+
+    for (let i = 0; i < games.length; i++) {
+
+      //get id at index
+      let id = games[i];
+
+      //add card to list
       arr.push(
-        <div key={i} className="checkoutCard">
-          <h3>Game #{i + 1}</h3>
-          <p className="textBody">Details TBD</p>
+        <div key={id} className="checkoutCard">
+          
+          <div style={{flexGrow: 1}}>
+             <h3>Game #{id}</h3>
+             <p className="textBody"> Details TBD</p>
+          </div>
+
+          <div 
+            //super cool delete button
+             onClick={() => handleDelete(id)} 
+             style={{ 
+               cursor: 'pointer', 
+               fontWeight: 'bold', 
+               padding: '10px',
+               color: '#666' 
+             }}
+          >
+             X
+          </div>
         </div>
       );
     }
     return arr;
   }
 
+
   //viewing screen
   return (
-    <div className="checkoutMain">
-      <h1 className="textTitle">
-        Confirm Your Rentals |{numGames}/2|
-      </h1>
+    //background that's just the png
 
-      <h2 className="textSubtitle">
-        Games: {numGames}
-      </h2>
+    <div className = "checkoutBackground">
+      <div ClassName = "navBar">
 
-      <div className="gameList">
-        {loadGames()}
       </div>
 
-    </div>
+      {/*main container box that has title text, which holds space for the games*/}
+      <div className="checkoutMain">
+        <h1 className="textTitle"> Confirm Your Rentals |{numGames}/2| </h1>
+          <h2 className="textSubtitle"> Games: {numGames} </h2>
+
+          {/*button*/}
+          <div className="buttonContainer">
+            <button className="addGameBtn" onClick={handleAdd}>
+                ADD GAME
+            </button>
+          </div>
+        <div className="gameList">
+          {loadGames()}
+        </div>
+
+        <h1 className="textTitle"> Return Information </h1>
+
+      </div>
+    </div> 
+
   );
 };
 
 export default Checkout;
 //cd westernBoardGames/wbg_react_frontend
+//CHANGE BACK .APP to home before comitting

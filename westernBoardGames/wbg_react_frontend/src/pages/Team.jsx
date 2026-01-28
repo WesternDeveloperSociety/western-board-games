@@ -6,10 +6,13 @@ import { members } from '../data/members';
 const Team = () => {
   return (
     <div className="team-page">
-      <h1 className="team-title">Meet the Team</h1>
+      <div className="team-header">
+        <h1 className="team-title">Meet The Team</h1>
+      </div>
       <p className="team-description">
-        We are a group of students with a deep love for boardgames.
-        Lorem Ipsum.
+        We at Western Board Games Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+        ullamco laboris nisi ut aliquip ex
       </p>
       <div className="team-grid">
         {members.map((member) => (
@@ -18,6 +21,8 @@ const Team = () => {
             name={member.name}
             position={member.position}
             image={member.image}
+            cardSymbol={member.cardSymbol}
+            imageShape={member.imageShape}
           />
         ))}
       </div>
