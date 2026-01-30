@@ -1,6 +1,11 @@
 import React from 'react';
 import '../styles/home.css';
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+
 //importing images
 import WBGlogo from "../assets/LOGO_WBG.png";
 import WBGbackground from "../assets/BACKGROUND_WBG.png";
@@ -49,13 +54,28 @@ export default function Home() {
 
             {/* PHOTO GALLERY SECTION */}
             <div className="gallery">
-                <h2 className="galleryTitle">Photo Gallery</h2>
-                <div className="galleryItems">
-                    <img src={imagePlaceholder} alt="placeholder" className="galleryImg" />
-                    <img src={imagePlaceholder} alt="placeholder" className="galleryImg" />
-                    <img src={imagePlaceholder} alt="placeholder" className="galleryImg" />
-                    <img src={imagePlaceholder} alt="placeholder" className="galleryImg" />
-                </div>
+                <Swiper
+                    modules={[Navigation, Autoplay]}
+                    spaceBetween={30}
+                    slidesPerView={3}
+                    navigation
+                    autoplay={{ delay: 3000, disableOnInteraction: false }}
+                    loop={true}
+                    loopAdditionalSlides={2}
+                    centeredSlides={false}
+                    breakpoints={{
+                        320: { slidesPerView: 1 },
+                        768: { slidesPerView: 2 },
+                        1024: { slidesPerView: 3 }
+                    }}
+                >
+                    <SwiperSlide><img src={imagePlaceholder} alt="placeholder" className="galleryImg" /></SwiperSlide>
+                    <SwiperSlide><img src={imagePlaceholder} alt="placeholder" className="galleryImg" /></SwiperSlide>
+                    <SwiperSlide><img src={imagePlaceholder} alt="placeholder" className="galleryImg" /></SwiperSlide>
+                    <SwiperSlide><img src={imagePlaceholder} alt="placeholder" className="galleryImg" /></SwiperSlide>
+                    <SwiperSlide><img src={imagePlaceholder} alt="placeholder" className="galleryImg" /></SwiperSlide>
+                    <SwiperSlide><img src={imagePlaceholder} alt="placeholder" className="galleryImg" /></SwiperSlide>
+                </Swiper>
             </div>
         </div>
     );

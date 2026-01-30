@@ -17,7 +17,7 @@ body {
   margin-left: -50vw;
   right: 50%;
   margin-right: -50vw; 
-  padding: 40px 16px 30px; 
+  padding: 2.5rem 1rem 1.875rem; 
   background-size: cover; 
   background-position: center;
   background-repeat: no-repeat;
@@ -30,30 +30,30 @@ body {
 /* Header content */
 .header-content {
   text-align: center;
-  max-width: 1000px;
-  padding: 40px 20px;
+  max-width: 62.5rem;
+  padding: 2.5rem 1.25rem;
   color: white;
 }
 
 /* Logo */
 .logo {
-  width: 350px;
+  width: 21.875rem;
   height: auto;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 /* About Us title */
 .about-title {
-  font-size: 44px;
-  letter-spacing: 4px;
+  font-size: 4rem;
+  letter-spacing: 0.25rem;
   text-decoration: underline;
-  text-underline-offset: 10px;
-  margin-bottom: 20px;
+  text-underline-offset: 0.625rem;
+  margin-bottom: 1.25rem;
 }
 
 /* About text */
 .about-text {
-  font-size: 22px;
+  font-size: 1.5rem;
   line-height: 1.6;
   font-weight: 600;
 }
@@ -63,8 +63,8 @@ body {
 .main {
   width: 100vw;
   height: auto;
-  background: #ffffff;
-  padding: 40px 16px 30px;
+  background: #fcfdf6;
+  padding: 6rem 1rem 6rem;
   display: flex;
   position: relative;
   left: 50%;
@@ -73,34 +73,41 @@ body {
   margin-right: -50vw;
   flex-direction: column;
   align-items: center;
-  gap: 22px;
+  gap: 4rem;
   
 }
 
 /* Text Bubbles */
 .textBubble {
   width: 90%;
-  background: #ECF4D3;
-  padding: 22px 32px;
+  background: #A4AF7C;
+  padding: 2.1875rem 2.8125rem;
   text-align: center;
   color: black;
   font-weight: 700;
-  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.22);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 999px;
+  box-shadow: 0 0.625rem 1.125rem rgba(0, 0, 0, 0.22);
+  border: 0.0625rem solid rgba(0, 0, 0, 0.08);
+  border-radius: 62.4375rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.textBubble:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0.9375rem 1.5625rem rgba(0, 0, 0, 0.3);
 }
 
 /* Remove default paragraph */
 .textBubble p {
   margin: 0;
-  font-size: 22px;
-  line-height: 1.6;
+  font-size: 1.75rem;
+  line-height: 1.7;
 }
 
 /* Third bubble */
 .main .textBubble:nth-child(3) {
-  border-radius: 24px; /* more rectangle than pill */
-  padding: 20px 22px;
+  border-radius: 1.5rem; /* more rectangle than pill */
+  padding: 2rem 2.1875rem;
   font-weight: 650;
 }
 
@@ -109,7 +116,7 @@ body {
 .textBubble .link {
   font-weight: 800;
   text-decoration: underline;
-  text-underline-offset: 3px;
+  text-underline-offset: 0.1875rem;
   color: inherit;
   cursor: pointer;
 }
@@ -123,39 +130,64 @@ body {
   margin-left: -50vw;
   margin-right: -50vw;
   background: #ECF4D3;  
-  padding: 24px 16px 36px;
+  padding: 4rem 1rem 4rem;
   text-align: center;
-  border-top: 2px solid rgba(0, 0, 0, 0.08);
+  border-top: 0.125rem solid rgba(0, 0, 0, 0.08);
   color: black;
 }
 
 /* Gallery title */
 .galleryTitle {
-  margin: 0 0 20px;
-  font-size: 26px;
+  margin: 0 0 3rem;
+  font-size: 2.25rem;
   font-weight: bold;
-  letter-spacing: 6px;
+  letter-spacing: 0.375rem;
   text-decoration: underline;
-  text-underline-offset: 8px;
+  text-underline-offset: 0.5rem;
   font-weight: 800;
 }
 
-/* Gallery image grid */
-.galleryItems {
-  max-width: 95%;
+/* Swiper container styling */
+.gallery .swiper {
+  max-width: 92%;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
+  padding: 0 3rem 2rem;
 }
 
 /* Individual gallery image */
 .galleryImg {
   width: 100%;
-  height: 155px;
+  height: 18rem;
   object-fit: cover;
-  border-radius: 18px;
-  background: #A4AF7C;
-  border-radius: 18px;
-  padding: 12px;
+  border-radius: 1.125rem;
+  background: #fcfdf6;
+  padding: 0.75rem;
+}
+
+/* Swiper navigation buttons */
+.gallery .swiper-button-next,
+.gallery .swiper-button-prev {
+  color: #4a5a2a;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.gallery .swiper-button-next:after,
+.gallery .swiper-button-prev:after {
+  font-size: 1.25rem;
+}
+
+/* Swiper pagination bullets */
+.gallery .swiper-pagination-bullet {
+  background: #4a5a2a;
+  opacity: 0.5;
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+.gallery .swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #4a5a2a;
 }
