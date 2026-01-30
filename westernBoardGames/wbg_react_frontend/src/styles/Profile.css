@@ -37,24 +37,18 @@ h1 {
     margin: 1rem;
 }
 
+.user_info {
+    margin-left: 2rem;
+}
+
 .tables {
-    width: 100%;
+    margin: 2rem;
 }
 
-table, th, td {
-    border: 1px solid #D1D1D1;
-    border-collapse: collapse;
-    width: 100vw;
-}
-
-th {
-    background-color: #ECF4D3;
-    text-align: left;
-    font-size: 1rem;
-}
-
-td {
-    background-color: #ECF4D333;
+.gamesList {
+    max-height: 25rem;
+    overflow-y: scroll;
+    border-radius: 1rem;
 }
 
 h2 {
