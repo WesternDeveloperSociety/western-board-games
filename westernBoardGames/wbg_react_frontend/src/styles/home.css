@@ -89,7 +89,6 @@ body {
   border: 0.0625rem solid rgba(0, 0, 0, 0.08);
   border-radius: 62.4375rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
 }
 
 .textBubble:hover {

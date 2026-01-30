@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/home.css';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -38,7 +39,7 @@ export default function Home() {
                     <p>Meetings every Saturday 2–6pm at the UCC</p>
                 </div>
                 <div className='textBubble'>
-                    <p>Explore our library <span className="link" style={{ cursor: 'pointer', textDecoration: 'underline' }}>HERE</span> and rent board games to enjoy at home!</p>
+                    <p>Explore our library <Link to="/catalog" className="link" style={{ cursor: 'pointer', textDecoration: 'underline' }}>HERE</Link> and rent board games to enjoy at home!</p>
                 </div>
                 <div className='textBubble'>
                     <p> Keep up to date with our latest announcements, upcoming events, and club activities by:
