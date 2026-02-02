@@ -1,5 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/home.css';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 //importing images
 import WBGlogo from "../assets/LOGO_WBG.png";
@@ -33,7 +39,7 @@ export default function Home() {
                     <p>Meetings every Saturday 2–6pm at the UCC</p>
                 </div>
                 <div className='textBubble'>
-                    <p>Explore our library <span className="link" style={{ cursor: 'pointer', textDecoration: 'underline' }}>HERE</span> and rent board games to enjoy at home!</p>
+                    <p>Explore our library <Link to="/catalog" className="link" style={{ cursor: 'pointer', textDecoration: 'underline' }}>HERE</Link> and rent board games to enjoy at home!</p>
                 </div>
                 <div className='textBubble'>
                     <p> Keep up to date with our latest announcements, upcoming events, and club activities by:
@@ -49,13 +55,28 @@ export default function Home() {
 
             {/* PHOTO GALLERY SECTION */}
             <div className="gallery">
-                <h2 className="galleryTitle">Photo Gallery</h2>
-                <div className="galleryItems">
-                    <img src={imagePlaceholder} alt="placeholder" className="galleryImg" />
-                    <img src={imagePlaceholder} alt="placeholder" className="galleryImg" />
-                    <img src={imagePlaceholder} alt="placeholder" className="galleryImg" />
-                    <img src={imagePlaceholder} alt="placeholder" className="galleryImg" />
-                </div>
+                <Swiper
+                    modules={[Navigation, Autoplay]}
+                    spaceBetween={30}
+                    slidesPerView={3}
+                    navigation
+                    autoplay={{ delay: 3000, disableOnInteraction: false }}
+                    loop={true}
+                    loopAdditionalSlides={2}
+                    centeredSlides={false}
+                    breakpoints={{
+                        320: { slidesPerView: 1 },
+                        768: { slidesPerView: 2 },
+                        1024: { slidesPerView: 3 }
+                    }}
+                >
+                    <SwiperSlide><img src={imagePlaceholder} alt="placeholder" className="galleryImg" /></SwiperSlide>
+                    <SwiperSlide><img src={imagePlaceholder} alt="placeholder" className="galleryImg" /></SwiperSlide>
+                    <SwiperSlide><img src={imagePlaceholder} alt="placeholder" className="galleryImg" /></SwiperSlide>
+                    <SwiperSlide><img src={imagePlaceholder} alt="placeholder" className="galleryImg" /></SwiperSlide>
+                    <SwiperSlide><img src={imagePlaceholder} alt="placeholder" className="galleryImg" /></SwiperSlide>
+                    <SwiperSlide><img src={imagePlaceholder} alt="placeholder" className="galleryImg" /></SwiperSlide>
+                </Swiper>
             </div>
         </div>
     );
