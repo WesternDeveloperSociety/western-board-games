@@ -1,0 +1,81 @@
+{
+  "stats": {
+    "gamesRentedOut": 5,
+    "gamesPastDue": 2,
+    "gamesInCatalogue": 198
+  },
+  "rentals": [
+    {
+      "id": 1,
+      "game": "Catan",
+      "borrower": "John Doe",
+      "dueDate": "1973-01-15",
+      "daysRemaining": 2,
+      "image": "https://cf.geekdo-images.com/0XODRpReiZBFUffEcqT5-Q__itemrep@2x/img/81lS9PRn2JwyE4br1l7Z5fgSyFo=/fit-in/492x600/filters:strip_icc()/pic9156909.png",
+      "status": "remaining"
+    },
+    {
+      "id": 2,
+      "game": "Codenames",
+      "borrower": "Jane Doe",
+      "dueDate": "2010-02-10",
+      "daysRemaining": 6,
+      "image": "https://cf.geekdo-images.com/F_KDEu0GjdClml8N7c8Imw__imagepage/img/rc_Do8f5v41nWEGcwHE1eKAkIfI=/fit-in/900x600/filters:no_upscale():strip_icc()/pic2582929.jpg",
+      "status": "remaining"
+    },
+    {
+      "id": 3,
+      "game": "Pandemic",
+      "borrower": "Michael Scofield",
+      "dueDate": "2077-03-30",
+      "daysOverdue": 7,
+      "image": "https://cf.geekdo-images.com/S3ybV1LAp-8SnHIXLLjVqA__itemrep@2x/img/qnS9n-lo85ht2reXk7MsdbgeQfM=/fit-in/492x600/filters:strip_icc()/pic1534148.jpg",
+      "status": "overdue"
+    },
+    {
+      "id": 4,
+      "game": "Wingspan",
+      "borrower": "Gregory House",
+      "dueDate": "2002-02-24",
+      "daysOverdue": 2,
+      "image": "https://cf.geekdo-images.com/yLZJCVLlIx4c7eJEWUNJ7w__imagepage/img/uIjeoKgHMcRtzRSR4MoUYl3nXxs=/fit-in/900x600/filters:no_upscale():strip_icc()/pic4458123.jpg",
+      "status": "overdue"
+    },
+    {
+      "id": 1,
+      "game": "Catan",
+      "borrower": "John Doe",
+      "dueDate": "1973-01-15",
+      "daysRemaining": 2,
+      "image": "https://cf.geekdo-images.com/0XODRpReiZBFUffEcqT5-Q__itemrep@2x/img/81lS9PRn2JwyE4br1l7Z5fgSyFo=/fit-in/492x600/filters:strip_icc()/pic9156909.png",
+      "status": "remaining"
+    },
+    {
+      "id": 2,
+      "game": "Codenames",
+      "borrower": "Jane Doe",
+      "dueDate": "2010-02-10",
+      "daysRemaining": 6,
+      "image": "https://cf.geekdo-images.com/F_KDEu0GjdClml8N7c8Imw__imagepage/img/rc_Do8f5v41nWEGcwHE1eKAkIfI=/fit-in/900x600/filters:no_upscale():strip_icc()/pic2582929.jpg",
+      "status": "remaining"
+    },
+    {
+      "id": 3,
+      "game": "Pandemic",
+      "borrower": "Michael Scofield",
+      "dueDate": "2077-03-30",
+      "daysOverdue": 7,
+      "image": "https://cf.geekdo-images.com/S3ybV1LAp-8SnHIXLLjVqA__itemrep@2x/img/qnS9n-lo85ht2reXk7MsdbgeQfM=/fit-in/492x600/filters:strip_icc()/pic1534148.jpg",
+      "status": "overdue"
+    },
+    {
+      "id": 4,
+      "game": "Wingspan",
+      "borrower": "Gregory House",
+      "dueDate": "2002-02-24",
+      "daysOverdue": 2,
+      "image": "https://cf.geekdo-images.com/yLZJCVLlIx4c7eJEWUNJ7w__imagepage/img/uIjeoKgHMcRtzRSR4MoUYl3nXxs=/fit-in/900x600/filters:no_upscale():strip_icc()/pic4458123.jpg",
+      "status": "overdue"
+    }
+  ]
+}
