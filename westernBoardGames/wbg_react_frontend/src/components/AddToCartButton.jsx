@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../styles/AddToCartButton.css";
 
-const AddToCartButton = ({ gameId, onAddToCart }) => {
+const AddToCartButton = ({ gameId, onAddToCart, disabled }) => {
     const [isAdded, setIsAdded] = useState(false);
 
     const handleClick = () => {
@@ -20,6 +20,7 @@ const AddToCartButton = ({ gameId, onAddToCart }) => {
         <button
             className={`add-to-cart-btn ${isAdded ? "added" : ""}`}
             onClick={handleClick}
+            disabled={disabled}
         >
             <span className="btn-text">{isAdded ? "Added" : "Add to Cart"}</span>
             {isAdded && (

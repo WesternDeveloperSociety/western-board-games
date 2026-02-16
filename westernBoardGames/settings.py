@@ -43,12 +43,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
+    'django_filters',
 
     'westernBoardGames.user',
     'westernBoardGames.bg_admin',
     'westernBoardGames.rentals',
     'westernBoardGames.games',
-    'westernBoardGames.frontend',
 ]
 
 MIDDLEWARE = [
@@ -64,6 +64,9 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'westernBoardGames.urls'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 TEMPLATES = [
     {
@@ -88,14 +91,22 @@ WSGI_APPLICATION = 'westernBoardGames.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('LOCAL_DB_NAME'),
-        'USER': os.environ.get('LOCAL_DB_USER'),
-        'PASSWORD': os.environ.get('LOCAL_DB_PASSWORD'),
-        'HOST': os.environ.get('LOCAL_DB_HOST'),
-        'PORT': os.environ.get('LOCAL_DB_PORT'),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# Production level database configuration using environment variables 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': os.environ.get('LOCAL_DB_NAME'),
+#         'USER': os.environ.get('LOCAL_DB_USER'),
+#         'PASSWORD': os.environ.get('LOCAL_DB_PASSWORD'),
+#         'HOST': os.environ.get('LOCAL_DB_HOST'),
+#         'PORT': os.environ.get('LOCAL_DB_PORT'),
+#     }
+# }
 
 
 # Password validation

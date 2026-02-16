@@ -6,6 +6,12 @@ class Category(models.Model):
     name = models.CharField(max_length=100, unique=True)
     description = models.TextField(blank=True)
 
+    def __str__(self):
+        return self.name
+    
+    class Meta:
+        verbose_name_plural = "Categories"
+
 
 class BoardGame(models.Model):
     title = models.CharField(max_length=200)
@@ -16,7 +22,14 @@ class BoardGame(models.Model):
     min_players = models.IntegerField(null=True, blank=True)
     max_players = models.IntegerField(null=True, blank=True)
     play_time = models.IntegerField(help_text="Play time in minutes")
-    is_active = models.BooleanField(default=True)  # to hide retired games
+    quantity_total = models.IntegerField(default=1)
+    quantity_available = models.IntegerField(default=1)
+
+    def is_available(self):
+        return self.quantity_available > 0
+
+    def __str__(self):
+        return self.title    
     
 class GameCopy(models.Model):
     board_game = models.ForeignKey(BoardGame, on_delete=models.CASCADE, related_name="copies")

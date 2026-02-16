@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "../styles/BoardGameCard.css";
 import AddToCartButton from "./AddToCartButton.jsx";
 
-const BoardGameCard = ({ image, title, genre, players, playtime, complexity }) => {
+const BoardGameCard = ({ id, image, title, genre, players, playtime, complexity, quantity }) => {
   const cardRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -32,7 +32,19 @@ const BoardGameCard = ({ image, title, genre, players, playtime, complexity }) =
       className={`bgcard-wrapper bgcard-fade ${isVisible ? "visible" : ""}`}
     >
       <div className="bgcard-image-container">
-        <img src={image} alt={title} className="bgcard-img" />
+        <img
+          src={imageUrl}
+          alt={title}
+          className="bgcard-img"
+          onError={(e) => {
+            e.target.src = '/images/placeholder-game.jpg';
+          }}
+        />
+        {quantity !== undefined && (
+          <div className="bgcard-quantity-badge">
+            {quantity > 0 ? `${quantity} available` : 'Out of stock'}
+          </div>
+        )}
       </div>
 
       <div className="bgcard-content">
@@ -62,7 +74,10 @@ const BoardGameCard = ({ image, title, genre, players, playtime, complexity }) =
       </div>
 
       <div className="bgcard-action">
-        <AddToCartButton gameId={title} />
+        <AddToCartButton
+          gameId={id}
+          disabled={quantity === 0}
+        />
       </div>
 
     </div>
