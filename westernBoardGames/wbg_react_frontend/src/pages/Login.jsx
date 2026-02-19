@@ -21,6 +21,36 @@ const Login = () => {
   //need to add login and sign up functionality
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    //All Signup validations Below
+
+    //need to add validation to ensure the email is not already in use by another account
+   
+    if (!isLogin && formData.password.length < 6) {
+      alert('Password must be at least 6 characters long');
+      return;
+    }
+   
+    if (!isLogin && formData.password !== formData.confirmPassword) {
+      alert('Passwords must match');
+      return;
+    }
+
+    //All Login validations Below
+    if (isLogin) {
+      
+      //Check if fields are filled
+      if (!formData.email || !formData.password) {
+        alert('Please enter both email and password');
+        return;
+      }
+    
+    //need to add validation to check if the email and password match an existing account in the database
+     
+    //need to add login and sign up functionality
+    }
+    
+    console.log('Form submitted:', formData);
   };
 
   const toggleMode = () => {
