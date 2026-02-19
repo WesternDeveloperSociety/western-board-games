@@ -10,6 +10,7 @@ import Home from './pages/home';
 import Checkout from './pages/Checkout';
 import Footer from './components/Footer';
 import AdminDashboard from './pages/Admin';
+import Login from './pages/Login';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/catalog" element={<CatalogPage />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/login" element={<Login />} />
           {/* <Route path="/signout" element={<SignOut />} /> */}
         </Routes>
         <Footer></Footer>

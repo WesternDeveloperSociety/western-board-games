@@ -21,6 +21,8 @@ const NavBar = () => {
                 return 'navbar-catalog';
             case '/admin':
                 return 'navbar-catalog';
+            case '/login':
+                return 'navbar-catalog';
             default:
                 return '';
         }
@@ -43,6 +45,7 @@ const NavBar = () => {
                     <li><Link to="/profile">Profile</Link></li>
                     <li><Link to="/team">Our Team</Link></li>
                     <li><Link to="/admin">Admin</Link></li>
+                    <li><Link to="/login">Login</Link></li>
                     <li><Link to="/checkout"><i className="fa-solid fa-cart-shopping"></i></Link></li>
                 </ul>
             </div>
