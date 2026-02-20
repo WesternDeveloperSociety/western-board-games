@@ -1,8 +1,19 @@
-import data from "../data/adminDummyData.json";
+import { useEffect, useState } from "react";
 import RentalHistory from "../components/RentalHistory";
 import "../styles/AdminPage.css";
 
 export default function AdminDashboard() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    fetch("http://localhost:8000/api/admin/dashboard/")
+      .then((res) => res.json())
+      .then(setData)
+      .catch(console.error);
+  }, []);
+
+  if (!data) return <div style={{ padding: 24 }}>Loading...</div>;
+  
   return (
     <>
       <main className="admin-container">

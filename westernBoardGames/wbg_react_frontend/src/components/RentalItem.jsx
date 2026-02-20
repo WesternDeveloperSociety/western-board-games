@@ -8,6 +8,7 @@ export default function RentalItem({ rental }) {
       <div className="rental-info">
         <h2>{rental.game}</h2>
         <p>Borrowed by: {rental.borrower}</p>
+        {rental.borrowerEmail && <p>Email: {rental.borrowerEmail}</p>}
         <p>Due on: {new Date(rental.dueDate).toLocaleDateString()}</p>
       </div>
 
