@@ -19,4 +19,5 @@ from django.urls import include, path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/rentals/', include('westernBoardGames.rentals.urls')), #added for rentals
 ]
